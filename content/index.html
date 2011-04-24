@@ -1,0 +1,20 @@
+---
+extends: base.j2
+default_block: main
+title: Valerii Hiora
+description: Bit stories 
+---
+
+{% for project in projects.projects -%}
+<div class="project-container">
+    <div class="project-description"> <a href="{{ project.url }}">{% if project.icon -%}<img src="{{project.icon}}" width=16 height=16/>{%- endif %} {{ project.title }}</a><br/>{{ project.description }} </div>
+	<br/>
+	{% if project.contribution -%}
+   	<div class="project-contribution"> Contribution: {{project.contribution}} </div>
+	{%- endif %}
+</div>
+<br/>
+
+{%- endfor %}
+
+</section>
