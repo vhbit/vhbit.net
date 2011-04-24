@@ -6,6 +6,7 @@ description: Bit stories
 ---
 
 {% for project in projects.projects -%}
+
 <div class="project-container">
     <div class="project-description"> <a href="{{ project.url }}">{% if project.icon -%}<img src="{{project.icon}}" width=16 height=16/>{%- endif %} {{ project.title }}</a><br/>{{ project.description }} </div>
 	<br/>
