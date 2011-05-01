@@ -446,6 +446,10 @@ div.project-description a {
   text-decoration: none;
 }
 
+div.project-description a:hover {
+  text-decoration: underline;
+}
+
 div.project-icon {
 	float: left;
 }
