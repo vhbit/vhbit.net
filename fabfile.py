@@ -28,6 +28,6 @@ def reserve():
 @hosts(PROD)
 def publish():
     regen()
-    put(os.path.join(DEPLOY_PATH, 'index.html'), os.path.join(DEST_PATH, 'index.temp.html'), use_sudo=True)
-    put(os.path.join(DEPLOY_PATH, 'index.ru.html'), os.path.join(DEST_PATH, 'index.temp.ru.html'), use_sudo=True)    
+    put(os.path.join(DEPLOY_PATH, 'index.html'), os.path.join(DEST_PATH, 'index.html'), use_sudo=True)
+    put(os.path.join(DEPLOY_PATH, 'index.ru.html'), os.path.join(DEST_PATH, 'index.ru.html'), use_sudo=True)    
     put(os.path.join(DEPLOY_PATH, 'media'), DEST_PATH, use_sudo=True)

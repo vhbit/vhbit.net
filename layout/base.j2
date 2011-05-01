@@ -32,7 +32,6 @@
 
   {% block css %}
   <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
-  <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
   {% endblock css %}
 
   {% block headjs %}
@@ -58,14 +57,14 @@
           </section>
       </div>
     {% endblock container %}
-    
-    {% block nav %}
-    {% from "macros.j2" import render_lang_nav with context %}
-    {{ render_lang_nav() }}
-    {% endblock %}
-    
+	  <div id="footer">
+			<a href="http://vhbit.net/blog">Blog</a>,&nbsp; <a href="http://github.com/vhbit">GitHub</a>,&nbsp;<a href="http://vhbit.tumblr.com">Tumblr</a>, <a href="http://twitter.com/vhbit">Twitter</a>
+	  </div> <!-- ! end of #footer -->
+
   </div> <!--! end of #container -->
   {% endblock content%}
+  
+
   {% block js %}
   <!-- Javascript at the bottom for fast page loading -->
 

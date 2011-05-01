@@ -59,11 +59,12 @@ body{
 
 header h1 {
     text-shadow: 0px 2px 0px #efefef;
+    display: inline;
 }
 
 #container{
           /* background-color: #eaeaea; */
-          width: 640px;
+          width: 660px;
          margin: 0 auto;
          padding: 12px;
 -moz-box-shadow: 0px 4px 12px #ccc; /* FF3.5+ */
@@ -73,11 +74,27 @@ header h1 {
       -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='#ccc')"; /* IE8 */
 }
 
-footer{
-    font-size: 10px;
+#main {
+    border-bottom: 1px solid #bbb;
+}
+
+#footer{
+    font-size: 14px;
     text-align: center;
-    margin-top: 24px;
-    text-shadow: 0px 2px 0px #fff;
+    border-top: 1px solid #ccc;
+    margin-top: 1px;
+    padding-top: 8px;
+    text-shadow: none;
+}
+
+#footer a {
+    text-decoration: none;
+    text-shadow: none;    
+}
+
+#footer a:hover {
+    background-color: #37e;
+    color: #fff;
 }
 
 .bigrounded {
@@ -161,6 +178,10 @@ h1 a, h2 a, h3 a{
     margin-top: 1px;
 }
 
+div.project-container {
+    padding: 0px;
+}
+
 div.project-description a {
   font-weight: bold;
   color: black;
@@ -176,21 +197,20 @@ div.project-icon {
 }
 
 div.lang-selector {
+    clear:both;    
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
-div.lang-selector a {
+a.switch-lang {
     text-shadow: none;
-    color: black;
     text-decoration: none;
     padding-left: 2px;
     padding-right: 2px;
 }
 
-div.lang-selector a.active {
-    background-color: black;
-    color: white;    
+a.switch-lang:hover {
+    background-color: #37e;
+    color: #fff;    
 }
-

@@ -22,6 +22,18 @@
 {% endif -%}
 {%- endmacro %}
 
+{% macro render_next_lang() -%}
+	{% if langs -%}
+		{% if resource.url == site.content.resource_from_relative_path(langs["en"].url).url -%}
+			{% set next_lang = "ru" -%}
+		{% else -%}
+			{% set next_lang = "en" -%}
+		{%- endif %}
+		
+		(<a class="switch-lang" href="{{ site.content.resource_from_relative_path(langs[next_lang].url).url }}">→ {{ next_lang }}</a>)
+	{%- endif %}
+{%- endmacro %}
+
 {% macro render_projects(lang) -%}
 {% if not lang -%}
 	{% set lang = "en" -%}
@@ -29,9 +41,9 @@
 
 {% for project in about.projects -%}
 <div class="project-container">
-    <div class="project-description"> <a href="{{ best_lang_for(project, "url", lang) -}}">{% if project.icon -%}<img src="{{project.icon -}}" width=16 height=16/>{%- endif %}{{ best_lang_for(project, "title", lang) -}}</a><br/>{{ best_lang_for(project, "description", lang) -}} </div>
-	<br/>
+    <div class="project-description"> <a href="{{ best_lang_for(project, "url", lang) -}}">{% if project.icon -%}<img src="{{project.icon -}}" width=16 height=16/>{%- endif %}{{ best_lang_for(project, "title", lang) -}}</a><br/>{{ best_lang_for(project, "description", lang) -}} </div>	
 	{% if best_lang_for(project, "contribution", lang) -%}
+	<br/>
    	<div class="project-contribution"> Contribution: {{ best_lang_for(project, "contribution", lang) -}} </div>
 	{%- endif %}
 </div>

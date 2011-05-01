@@ -11,11 +11,9 @@ context:
     data:
         tweet_via: vhbit
         langs:
-            -
-                name: en
+            en:
                 url: index.html
-            - 
-                name: ru
+            ru:
                 url: index.ru.html
     providers:
         about: about.yaml        

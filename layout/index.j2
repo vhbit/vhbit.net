@@ -4,13 +4,15 @@
 <div id="main" role="main">
   <header class="banner clearfix">
   {% block header -%}
-    <h1>{{ resource.meta.header }}</h1>
+	{% from "macros.j2" import render_next_lang with context -%}
+    <h1>{{ resource.meta.header }}</h1> {{ render_next_lang() }}
   {%- endblock %}
   </header>
   <section class="content">
   {% block main %}
   {% endblock main %}
-  </section>
+  </section>    
 </div>
+
 {% endblock container %}
 
