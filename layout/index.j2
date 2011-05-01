@@ -1,0 +1,16 @@
+{% extends "base.j2" %}
+
+{% block container %}
+<div id="main" role="main">
+  <header class="banner clearfix">
+  {% block header -%}
+    <h1>{{ resource.meta.header }}</h1>
+  {%- endblock %}
+  </header>
+  <section class="content">
+  {% block main %}
+  {% endblock main %}
+  </section>
+</div>
+{% endblock container %}
+

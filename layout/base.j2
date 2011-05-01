@@ -58,10 +58,13 @@
           </section>
       </div>
     {% endblock container %}
+    
+    {% block nav %}
+    {% from "macros.j2" import render_lang_nav with context %}
+    {{ render_lang_nav() }}
+    {% endblock %}
+    
   </div> <!--! end of #container -->
-  <footer>
-      Powered by <a href="http://ringce.com/hyde">hyde</a>.
-  </footer>
   {% endblock content%}
   {% block js %}
   <!-- Javascript at the bottom for fast page loading -->

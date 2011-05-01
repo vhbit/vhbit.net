@@ -29,10 +29,5 @@ def reserve():
 def publish():
     regen()
     put(os.path.join(DEPLOY_PATH, 'index.html'), os.path.join(DEST_PATH, 'index.temp.html'), use_sudo=True)
+    put(os.path.join(DEPLOY_PATH, 'index.ru.html'), os.path.join(DEST_PATH, 'index.temp.ru.html'), use_sudo=True)    
     put(os.path.join(DEPLOY_PATH, 'media'), DEST_PATH, use_sudo=True)
-#    project.rsync_project(
-#        remote_dir=DEST_PATH,
-#        local_dir=DEPLOY_PATH.rstrip('/') + '/',
-#        delete=True
-#    )
-

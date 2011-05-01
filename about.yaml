@@ -1,0 +1,41 @@
+projects:  
+    -   icon: http://ritlabs.com/images/nbat.gif
+        title: The Bat!
+        url: 
+            en: http://www.ritlabs.com/en/products/thebat
+            ru: http://www.ritlabs.com/ru/products/thebat
+        description: 
+            en: It is the Best e-mail client ever and I'm really missing it on Mac. Developing The Bat! was one of the most important things happened in my life.
+            ru: Лучший почтовый клиент, его очень не хватает на Маке. Проект, с которого началась жизнь как программиста и которому очень многим обязан.
+    -   icon: http://risovaska.ru/media//img/tv-icon.png
+        title: 
+            en: MoodBox
+            ru: Рисоваська
+        url: http://risovaska.ru            
+        description: 
+            en: Quite interesting project, providing a new communication way, I''ve helped to port it to Linux and Mac. 
+            ru: Новый способ общения, помог портировать на Linux и Mac.
+    -   icon:
+        title: Highlight.js
+        url: 
+            en: http://softwaremaniacs.org/soft/highlight/en/
+            ru: http://softwaremaniacs.org/soft/highlight/
+        description:
+            en: Added support of Objective C highlighting to library.
+            ru: Добавил поддержку Objective C
+    -   icon: http://cdnstatic.visualizeus.com/css/images/favicon.gif
+        title: Visualize Us Chrome and Safari extensions
+        description: 
+            en: Being a fan of vi.sualize.us, I was unable to refuse myself to write simple browser extensions for easy bookmarking images/photos.
+            ru: Будучи поклонником vi.sualize.us, написал простенькие расширения для быстрого добавления в закладки.
+        url: http://vhbit.net/blog/visualize-us-safari-extension/        
+    -   icon: 
+        url: http://yee.md
+        title: Young Enterpreneurs in New Europe 2010
+        description: Project for encouraging european youngsters to think differently and search for business opportunities everywhere.
+        contribution: organizator's assisstance.
+    -   title: Flexis Dev Camp
+        description: 
+            en: It was my first experience of being iOS coach. The main goal was to prepare new comers to iOS development in 2 weeks using intensive learning technologies.
+            ru: Мой первый опыт преподавания разработки под iOS. Двухнедельный лагерь, организованный Flexis''ом с целью переподготовки кадров.
+        url: http://flexis.ru

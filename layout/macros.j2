@@ -10,31 +10,48 @@
 </article>
 {% endmacro %}
 
-{% macro render_nav(menu, cls=None) -%}
-{% if menu -%}
-<nav {{'class='~cls if cls }}>
-    <ul>
-        {% for item in menu -%}
+{% macro best_lang_for(item, field, lang) -%}
+{% if item[field][lang] -%} 
+    {{ item[field][lang] }}
+{% else -%}
+    {% if item[field]["en"] -%}
+        {{ item[field]["en"] }}
+    {% else -%}
+        {{ item[field] }}
+    {%- endif %}
+{% endif -%}
+{%- endmacro %}
+
+{% macro render_projects(lang) -%}
+{% if not lang -%}
+	{% set lang = "en" -%}
+{%- endif %}
+
+{% for project in about.projects -%}
+<div class="project-container">
+    <div class="project-description"> <a href="{{ best_lang_for(project, "url", lang) -}}">{% if project.icon -%}<img src="{{project.icon -}}" width=16 height=16/>{%- endif %}{{ best_lang_for(project, "title", lang) -}}</a><br/>{{ best_lang_for(project, "description", lang) -}} </div>
+	<br/>
+	{% if best_lang_for(project, "contribution", lang) -%}
+   	<div class="project-contribution"> Contribution: {{ best_lang_for(project, "contribution", lang) -}} </div>
+	{%- endif %}
+</div>
+<br/>
+
+{%- endfor %}
+{%- endmacro %}
+
+{% macro render_lang_nav() -%}
+{% if langs -%}
+<div class="lang-selector">
+    {% for item in langs -%}
         {% set active = False -%}
-        {% if item.type == 'page' -%}
-            {% set active = (resource.url ==
-                site.content.resource_from_relative_path(item.url).url) -%}
-        {% else -%}
-            {% set active = (node ==
-                site.content.node_from_relative_path(item.url)) -%}
-        {%- endif %}
-        {% set classes = ['button', 'white'] -%}
+        {% set active = (resource.url ==
+            site.content.resource_from_relative_path(item.url).url) -%}
+        {% set classes = [] -%}                
         {% do classes.append('active') if active -%}
         {% do classes.append(item.css_class) if item.css_class -%}
-        <li>
-            <a title="{{ item.description }}"
-                class="{{ classes|join(' ') }}"
-                href="{{ content_url(item.url) }}">
-                {{ item.name }}
-            </a>
-        </li>
-        {%- endfor %}
-    </ul>
-</nav>
+        <a title="{{ item.name }}" class="{{ classes|join(' ') }}" href="{{ content_url(item.url) }}">{{ item.name }}</a>
+    {%- endfor %}
+</div>
 {%- endif %}
 {%- endmacro %}
