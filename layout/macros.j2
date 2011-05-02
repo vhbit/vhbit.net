@@ -43,7 +43,7 @@
 <div class="project-container">
     <div class="project-description"> <a href="{{ best_lang_for(project, "url", lang) -}}">{% if project.icon -%}<img src="{{project.icon -}}" width=16 height=16/>{%- endif %}{{ best_lang_for(project, "title", lang) -}}</a><br/>{{ best_lang_for(project, "description", lang) -}} </div>	
 	{% if best_lang_for(project, "contribution", lang) -%}
-	<br/>
+	<!-- <br/> -->
    	<div class="project-contribution"> Contribution: {{ best_lang_for(project, "contribution", lang) -}} </div>
 	{%- endif %}
 </div>
