@@ -31,3 +31,7 @@ def publish():
     put(os.path.join(DEPLOY_PATH, 'index.html'), os.path.join(DEST_PATH, 'index.html'), use_sudo=True)
     put(os.path.join(DEPLOY_PATH, 'index.ru.html'), os.path.join(DEST_PATH, 'index.ru.html'), use_sudo=True)    
     put(os.path.join(DEPLOY_PATH, 'media'), DEST_PATH, use_sudo=True)
+
+@hosts(PROD)
+def updateStyle():
+    put(os.path.join(ROOT_PATH, 'content/media/css/site.css'), os.path.join(DEST_PATH, 'media/css/site.css'), use_sudo = True)
